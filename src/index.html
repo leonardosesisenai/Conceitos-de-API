@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    /* ── TOKENS (NOVO TEMA CLARO / MODERNO) ──────────────────────── */
+    /* ── TOKENS (TEMA CLARO / MODERNO) ───────────────────────────── */
     :root {
       --bg:        #f8fafc; /* Slate claro */
       --surface:   #ffffff; /* Branco puro */
@@ -625,12 +625,27 @@
       transform: translateY(-2px);
     }
 
-    /* ── RANDOM PAGE ─────────────────────────────────────────────── */
+    /* ── RANDOM PAGE (MODIFICADA) ───────────────────────────────── */
     .random-hero {
       text-align: center;
       padding: 4rem 0 3rem;
     }
-    .random-hero .big-emoji { font-size: 5rem; margin-bottom: 1.5rem; display: block; animation: float 3s ease-in-out infinite; }
+
+    /* ESTILO MODIFICADO PARA SUBSTITUIR EMOJI POR IMAGEM */
+    .random-hero .big-emoji {
+      display: block;
+      width: 8rem;             /* Tamanho da imagem */
+      height: 8rem;            /* Tamanho da imagem */
+      margin: 0 auto 1.5rem;   /* Centralizar e manter margem inferior */
+      border-radius: 50%;      /* Redondo */
+      background-image: url('image_0.png'); /* A imagem fornecida */
+      background-size: cover;  /* Preencher o círculo */
+      background-position: center;
+      color: transparent;      /* Esconde o texto/emoji original */
+      user-select: none;       /* Evita seleção do emoji escondido */
+      animation: float 3s ease-in-out infinite; /* Mantém flutuando */
+    }
+
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
     #random-btn {
@@ -721,8 +736,6 @@
   </style>
 </head>
 <body>
-</body>
-</html>
 
 <!-- NAV -->
 <nav>
